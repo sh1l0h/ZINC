@@ -1,0 +1,92 @@
+#ifndef ZINC_VEC4I_H
+#define ZINC_VEC4I_H
+
+#include "types.h"
+
+#define ZINC_VEC4I_ZERO {{0, 0, 0, 0}}
+#define ZINC_VEC4I_ONE {{1, 1, 1, 1}}
+
+typedef union Vec4i {
+	struct {
+		i32 x;
+		i32 y;
+		i32 z;
+		i32 w;
+	};
+	i32 arr[4];
+} Vec4i;
+
+/**
+ * @brief Initializes a Vec4i variable with zero values.
+ *
+ * @param vec Pointer to the Vec4i variable to be initialized.
+ */
+void zinc_vec4i_zero(Vec4i *vec);
+
+/**
+ * @brief Initializes a Vec4i variable with values (1, 1, 1, 1).
+ *
+ * @param vec Pointer to the Vec4i variable to be initialized.
+ */
+void zinc_vec4i_one(Vec4i *vec);
+
+/**
+ * @brief Copies the values from one Vec4i variable to another.
+ *
+ * @param src Pointer to the source Vec4i variable.
+ * @param dest Pointer to the destination Vec4i variable.
+ */
+void zinc_vec4i_copy(const Vec4i *src, Vec4i *dest);
+
+/**
+ * @brief Calculates the squared length of a Vec4i variable.
+ *
+ * @param vec Pointer to the Vec4i variable.
+ * @return The squared length of the Vec4i.
+ */
+f32 zinc_vec4i_squared_len(const Vec4i *vec);
+
+/**
+ * @brief Calculates the length of a Vec4i variable.
+ *
+ * @param vec Pointer to the Vec4i variable.
+ * @return The length of the Vec4i.
+ */
+f32 zinc_vec4i_len(const Vec4i *vec);
+
+/**
+ * @brief Scales a Vec4i variable by a constant factor.
+ *
+ * @param vec Pointer to the Vec4i variable to be scaled.
+ * @param c The scaling factor.
+ */
+void zinc_vec4i_scale(Vec4i *vec, i32 c);
+
+/**
+ * @brief Adds two Vec4i variables and stores the result in a destination Vec4i variable.
+ *
+ * @param a Pointer to the first Vec4i variable.
+ * @param b Pointer to the second Vec4i variable.
+ * @param dest Pointer to the destination Vec4i variable.
+ */
+void zinc_vec4i_add(const Vec4i *a, const Vec4i *b, Vec4i *dest);
+
+/**
+ * @brief Subtracts one Vec4i variable from another and stores the result in a destination Vec4i variable.
+ *
+ * @param a Pointer to the Vec4i variable to be subtracted from.
+ * @param b Pointer to the Vec4i variable to subtract.
+ * @param dest Pointer to the destination Vec4i variable.
+ */
+void zinc_vec4i_sub(const Vec4i *a, const Vec4i *b, Vec4i *dest);
+
+/**
+ * @brief Calculates the dot product of two Vec4i variables.
+ *
+ * @param a Pointer to the first Vec4i variable.
+ * @param b Pointer to the second Vec4i variable.
+ * @return The dot product of the two Vec4i variables.
+ */
+f32 zinc_vec4i_dot(const Vec4i *a, const Vec4i *b);
+
+#endif
