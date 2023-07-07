@@ -4,13 +4,9 @@
 #include "types.h"
 #include "vec4.h"
 
-#define ZINC_MAT4_ZERO {{0.0f, 0.0f, 0.0f},	\
-						{0.0f, 0.0f, 0.0f},	\
-						{0.0f, 0.0f, 0.0f}}
+#define ZINC_MAT4_ZERO {{0.0f, 0.0f, 0.0f, 0.0f}, {0.0f, 0.0f, 0.0f, 0.0f}, {0.0f, 0.0f, 0.0f, 0.0f}, {0.0f, 0.0f, 0.0f, 0.0f}}
 
-#define ZINC_MAT4_EYE {{1.0f, 0.0f, 0.0f},	\
-					   {0.0f, 1.0f, 0.0f},	\
-					   {0.0f, 0.0f, 1.0f}}
+#define ZINC_MAT4_EYE {{1.0f, 0.0f, 0.0f, 0.0f}, {0.0f, 1.0f, 0.0f, 0.0f}, {0.0f, 0.0f, 1.0f, 0.0f}, {0.0f, 0.0f, 0.0f, 1.0f}}
 
 typedef f32 Mat4[4][4];
 

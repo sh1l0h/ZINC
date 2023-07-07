@@ -3,8 +3,8 @@
 
 #include "types.h"
 
-#define ZINC_VEC3_ZERO {{0.0f, 0.0f}}
-#define ZINC_VEC3_ONE {{1.0f, 1.0f}}
+#define ZINC_VEC3_ZERO {{0.0f, 0.0f, 0.0f}}
+#define ZINC_VEC3_ONE {{1.0f, 1.0f, 1.0f}}
 
 typedef union Vec3 {
 	struct {

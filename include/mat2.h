@@ -4,11 +4,9 @@
 #include "types.h"
 #include "./vec2.h"
 
-#define ZINC_MAT2_ZERO {{0.0f, 0.0f},	\
-						{0.0f, 0.0f}}
+#define ZINC_MAT2_ZERO {{0.0f, 0.0f}, {0.0f, 0.0f}}
 
-#define ZINC_MAT2_EYE {{0.0f, 0.0f},		\
-					   {0.0f, 0.0f}}
+#define ZINC_MAT2_EYE {{0.0f, 0.0f}, {0.0f, 0.0f}}
 
 typedef f32 Mat2[2][2];
 

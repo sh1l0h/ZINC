@@ -4,13 +4,9 @@
 #include "types.h"
 #include "vec3.h"
 
-#define ZINC_MAT3_ZERO {{0.0f, 0.0f, 0.0f},\
-						{0.0f, 0.0f, 0.0f},\
-						{0.0f, 0.0f, 0.0f}}
+#define ZINC_MAT3_ZERO {{0.0f, 0.0f, 0.0f}, {0.0f, 0.0f, 0.0f}, {0.0f, 0.0f, 0.0f}}
 
-#define ZINC_MAT3_EYE {{1.0f, 0.0f, 0.0f},	\
-					   {0.0f, 1.0f, 0.0f},	\
-					   {0.0f, 0.0f, 1.0f}}
+#define ZINC_MAT3_EYE {{1.0f, 0.0f, 0.0f}, {0.0f, 1.0f, 0.0f}, {0.0f, 0.0f, 1.0f}}
 
 typedef f32 Mat3[3][3];
 
