@@ -15,4 +15,4 @@ add_library(${PROJECT_NAME}
     src/io.c
     )
 
-target_include_directories(zinc PUBLIC include)
+target_include_directories(ZINC PUBLIC include)
