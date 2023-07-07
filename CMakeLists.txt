@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.10)
 project(ZINC LANGUAGES C)
 
-add_library(zinc 
+add_library(${PROJECT_NAME}
     src/vec2.c
     src/vec3.c
     src/vec4.c
