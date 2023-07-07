@@ -1,5 +1,10 @@
 #Emacs temp files
 *~
+[#]*[#]
+.\#*
 
 #Directory with tests
-tests
+tests/
+
+#Build directory
+build/
