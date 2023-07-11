@@ -19,7 +19,7 @@ inline void zinc_vec4i_copy(const Vec4i *src, Vec4i *dest)
 	memcpy(dest, src, 4*sizeof(f32));
 }
 
-inline f32 zinc_vec4i_squared_len(const Vec4i *vec)
+inline i32 zinc_vec4i_squared_len(const Vec4i *vec)
 {
 	return vec->x*vec->x + vec->y*vec->y + vec->z*vec->z + vec->w*vec->w;
 }
@@ -53,7 +53,7 @@ inline void zinc_vec4i_sub(const Vec4i *a, const Vec4i *b, Vec4i *dest)
 	dest->w = a->w - b->w;
 }
 
-inline f32 zinc_vec4i_dot(const Vec4i *a, const Vec4i *b)
+inline i32 zinc_vec4i_dot(const Vec4i *a, const Vec4i *b)
 {
 	return a->x*b->x + a->y*b->y + a->z*b->z + a->w*b->w;
 }

@@ -19,29 +19,29 @@ typedef union Vec4 {
 /**
  * @brief Initializes a Vec4 variable with zero values.
  *
- * @param vec Pointer to the Vec4 variable to be initialized.
+ * @param[in, out] vec Pointer to the Vec4 variable to be initialized.
  */
 void zinc_vec4_zero(Vec4 *vec);
 
 /**
  * @brief Initializes a Vec4 variable with values (1.0, 1.0, 1.0, 1.0).
  *
- * @param vec Pointer to the Vec4 variable to be initialized.
+ * @param[in, out] vec Pointer to the Vec4 variable to be initialized.
  */
 void zinc_vec4_one(Vec4 *vec);
 
 /**
  * @brief Copies the values from one Vec4 variable to another.
  *
- * @param src Pointer to the source Vec4 variable.
- * @param dest Pointer to the destination Vec4 variable.
+ * @param[in] src Pointer to the source Vec4 variable.
+ * @param[out] dest Pointer to the destination Vec4 variable.
  */
 void zinc_vec4_copy(const Vec4 *src, Vec4 *dest);
 
 /**
  * @brief Calculates the squared length of a Vec4 variable.
  *
- * @param vec Pointer to the Vec4 variable.
+ * @param[in] vec Pointer to the Vec4 variable.
  * @return The squared length of the Vec4.
  */
 f32 zinc_vec4_squared_len(const Vec4 *vec);
@@ -49,7 +49,7 @@ f32 zinc_vec4_squared_len(const Vec4 *vec);
 /**
  * @brief Calculates the length of a Vec4 variable.
  *
- * @param vec Pointer to the Vec4 variable.
+ * @param[in] vec Pointer to the Vec4 variable.
  * @return The length of the Vec4.
  */
 f32 zinc_vec4_len(const Vec4 *vec);
@@ -57,41 +57,41 @@ f32 zinc_vec4_len(const Vec4 *vec);
 /**
  * @brief Normalizes a Vec4 variable, making its length 1.
  *
- * @param vec Pointer to the Vec4 variable to be normalized.
+ * @param[in, out] vec Pointer to the Vec4 variable to be normalized.
  */
 void zinc_vec4_norm(Vec4 *vec);
 
 /**
  * @brief Scales a Vec4 variable by a constant factor.
  *
- * @param vec Pointer to the Vec4 variable to be scaled.
- * @param c The scaling factor.
+ * @param[in, out] vec Pointer to the Vec4 variable to be scaled.
+ * @param[in] c The scaling factor.
  */
 void zinc_vec4_scale(Vec4 *vec, f32 c);
 
 /**
  * @brief Adds two Vec4 variables and stores the result in a destination Vec4 variable.
  *
- * @param a Pointer to the first Vec4 variable.
- * @param b Pointer to the second Vec4 variable.
- * @param dest Pointer to the destination Vec4 variable.
+ * @param[in] a Pointer to the first Vec4 variable.
+ * @param[in] b Pointer to the second Vec4 variable.
+ * @param[out] dest Pointer to the destination Vec4 variable.
  */
 void zinc_vec4_add(const Vec4 *a, const Vec4 *b, Vec4 *dest);
 
 /**
  * @brief Subtracts one Vec4 variable from another and stores the result in a destination Vec4 variable.
  *
- * @param a Pointer to the Vec4 variable to be subtracted from.
- * @param b Pointer to the Vec4 variable to subtract.
- * @param dest Pointer to the destination Vec4 variable.
+ * @param[in] a Pointer to the Vec4 variable to be subtracted from.
+ * @param[in] b Pointer to the Vec4 variable to subtract.
+ * @param[out] dest Pointer to the destination Vec4 variable.
  */
 void zinc_vec4_sub(const Vec4 *a, const Vec4 *b, Vec4 *dest);
 
 /**
  * @brief Calculates the dot product of two Vec4 variables.
  *
- * @param a Pointer to the first Vec4 variable.
- * @param b Pointer to the second Vec4 variable.
+ * @param[in] a Pointer to the first Vec4 variable.
+ * @param[in] b Pointer to the second Vec4 variable.
  * @return The dot product of the two Vec4 variables.
  */
 f32 zinc_vec4_dot(const Vec4 *a, const Vec4 *b);

@@ -13,57 +13,57 @@ typedef f32 Mat4[4][4];
 /**
  * @brief Sets all elements of the 4x4 matrix to zero.
  *
- * @param mat The 4x4 matrix to be zeroed.
+ * @param[in, out] mat The 4x4 matrix to be zeroed.
  */
 void zinc_mat4_zero(Mat4 mat);
 
 /**
  * @brief Sets the 4x4 matrix as an identity matrix.
  *
- * @param mat The 4x4 matrix to be set as an identity matrix.
+ * @param[in, out] mat The 4x4 matrix to be set as an identity matrix.
  */
 void zinc_mat4_eye(Mat4 mat);
 
 /**
  * @brief Scales a 4x4 matrix by a scalar value.
  *
- * @param mat The 4x4 matrix to be scaled.
- * @param c The scalar value to scale the matrix by.
+ * @param[in, out] mat The 4x4 matrix to be scaled.
+ * @param[in] c The scalar value to scale the matrix by.
  */
 void zinc_mat4_scale(Mat4 mat, f32 c);
 
 /**
  * @brief Copies the values of one 4x4 matrix to another.
  *
- * @param src The source matrix to copy values from.
- * @param dest The destination matrix to copy values to.
+ * @param[in] src The source matrix to copy values from.
+ * @param[out] dest The destination matrix to copy values to.
  */
 void zinc_mat4_copy(const Mat4 src, Mat4 dest);
 
 /**
  * @brief Adds two 4x4 matrices element-wise and stores the result in a destination matrix.
  *
- * @param a The first matrix to add.
- * @param b The second matrix to add.
- * @param dest The matrix to store the addition result.
+ * @param[in] a The first matrix to add.
+ * @param[in] b The second matrix to add.
+ * @param[out] dest The matrix to store the addition result.
  */
 void zinc_mat4_add(const Mat4 a, const Mat4 b, Mat4 dest);
 
 /**
  * @brief Subtracts one 4x4 matrix from another element-wise and stores the result in a destination matrix.
  *
- * @param a The matrix to subtract from.
- * @param b The matrix to subtract.
- * @param dest The matrix to store the subtraction result.
+ * @param[in] a The matrix to subtract from.
+ * @param[in] b The matrix to subtract.
+ * @param[out] dest The matrix to store the subtraction result.
  */
 void zinc_mat4_sub(const Mat4 a, const Mat4 b, Mat4 dest);
 
 /**
  * @brief Multiplies two 4x4 matrices and stores the result in a destination matrix.
  *
- * @param a The first matrix to multiply.
- * @param b The second matrix to multiply.
- * @param dest The matrix to store the multiplication result.
+ * @param[in] a The first matrix to multiply.
+ * @param[in] b The second matrix to multiply.
+ * @param[out] dest The matrix to store the multiplication result.
  */
 void zinc_mat4_mul(const Mat4 a, const Mat4 b, Mat4 dest);
 
@@ -73,31 +73,31 @@ void zinc_mat4_mul(const Mat4 a, const Mat4 b, Mat4 dest);
  * This function performs a matrix-vector multiplication, where the 4x4 matrix is multiplied by the 4D vector.
  * The resulting vector is stored in the destination vector.
  *
- * @param mat The 4x4 matrix to multiply with the vector.
- * @param vec The 4D vector to be multiplied with the matrix.
- * @param dest The vector to store the multiplication result.
+ * @param[in] mat The 4x4 matrix to multiply with the vector.
+ * @param[in] vec The 4D vector to be multiplied with the matrix.
+ * @param[out] dest The vector to store the multiplication result.
  */
 void zinc_mat4_mulv(const Mat4 mat, const Vec4 *vec, Vec4 *dest);
 
 /**
  * @brief Transposes a 4x4 matrix and stores the result in a destination matrix.
  *
- * @param mat The matrix to transpose.
- * @param dest The matrix to store the transposed result.
+ * @param[in] mat The matrix to transpose.
+ * @param[out] dest The matrix to store the transposed result.
  */
 void zinc_mat4_transpose_to(const Mat4 mat, Mat4 dest);
 
 /**
  * @brief Transposes a 4x4 matrix in-place.
  *
- * @param mat The matrix to transpose.
+ * @param[in, out] mat The matrix to transpose.
  */
 void zinc_mat4_transpose(Mat4 mat);
 
 /**
  * @brief Calculates the determinant of a 4x4 matrix.
  *
- * @param mat The matrix to calculate the determinant of.
+ * @param[in] mat The matrix to calculate the determinant of.
  * @return The determinant of the matrix.
  */
 f32 zinc_mat4_determinant(const Mat4 mat);
@@ -105,7 +105,7 @@ f32 zinc_mat4_determinant(const Mat4 mat);
 /**
  * @brief Calculates the trace of a 4x4 matrix.
  *
- * @param mat The matrix to calculate the trace of.
+ * @param[in] mat The matrix to calculate the trace of.
  * @return The trace of the matrix.
  */
 f32 zinc_mat4_trace(const Mat4 mat);
