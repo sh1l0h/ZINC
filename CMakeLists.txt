@@ -12,6 +12,7 @@ add_library(${PROJECT_NAME}
     src/mat3.c
     src/mat4.c
     src/camera.c
+    src/transformation.c
     src/io.c
     )
 
