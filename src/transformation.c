@@ -7,7 +7,7 @@ void zinc_translate(Mat4 mat, const Vec3 *vec)
 
 	mat[0][3] = vec->x;
 	mat[1][3] = vec->y;
-	mat[2][3] = vec->y;
+	mat[2][3] = vec->z;
 }
 
 void zinc_scale(Mat4 mat, const Vec3 *vec)
@@ -40,7 +40,7 @@ void zinc_rotate_y(Mat4 mat, f32 angle)
 	zinc_mat4_eye(mat);
 
 	mat[0][0] = c;
-	mat[1][2] = -s;
+	mat[0][2] = s;
 	mat[2][0] = -s;
 	mat[2][2] = c;
 }
