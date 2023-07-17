@@ -50,7 +50,7 @@ void zinc_mat3_print(const Mat3 mat)
 void zinc_mat4_print(const Mat4 mat)
 {
 	printf("\n");
-	for(u8 i = 0; i < 3; i++){
+	for(u8 i = 0; i < 4; i++){
 		printf("|%11.5f, %11.5f, %11.5f, %11.5f|\n", mat[i][0], mat[i][1], mat[i][2], mat[i][3]);
 	}
 }
