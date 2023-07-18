@@ -102,6 +102,6 @@ f32 zinc_vec3_dot(const Vec3 *a, const Vec3 *b);
  * @param[in] b Pointer to the second Vec3 variable.
  * @param[out] dest Pointer to the destination Vec3 variable.
  */
-void zinc_vec2_cross(const Vec3 *a, const Vec3 *b, Vec3 *dest);
+void zinc_vec3_cross(const Vec3 *a, const Vec3 *b, Vec3 *dest);
 
 #endif
