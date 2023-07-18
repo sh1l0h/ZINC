@@ -95,4 +95,13 @@ void zinc_vec3_sub(const Vec3 *a, const Vec3 *b, Vec3 *dest);
  */
 f32 zinc_vec3_dot(const Vec3 *a, const Vec3 *b);
 
+/**
+ * @brief Calculates the cross product of two Vec3 variables.
+ *
+ * @param[in] a Pointer to the first Vec3 variable.
+ * @param[in] b Pointer to the second Vec3 variable.
+ * @param[out] dest Pointer to the destination Vec3 variable.
+ */
+void zinc_vec2_cross(const Vec3 *a, const Vec3 *b, Vec3 *dest);
+
 #endif
