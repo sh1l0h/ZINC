@@ -37,6 +37,6 @@ void zinc_orthographic_projection(Mat4 mat, f32 far, f32 near, f32 top, f32 bott
  * @param[in] fov The field of view angle in radians.
  * @param[in] aspect_ratio The aspect ratio of the screen.
  */
-void zinc_persective_projection(Mat4 mat, f32 far, f32 near, f32 fov, f32 aspect_ratio);
+void zinc_perspective_projection(Mat4 mat, f32 far, f32 near, f32 fov, f32 aspect_ratio);
 
 #endif

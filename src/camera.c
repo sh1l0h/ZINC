@@ -38,7 +38,7 @@ void zinc_orthographic_projection(Mat4 mat, f32 far, f32 near, f32 top, f32 bott
 	mat[2][3] = -(far + near) / (far - near);
 }
 
-void zinc_persective_projection(Mat4 mat, f32 far, f32 near, f32 fov, f32 aspect_ratio)
+void zinc_perspective_projection(Mat4 mat, f32 far, f32 near, f32 fov, f32 aspect_ratio)
 {
 	f32 t = tanf(fov/2.0f);
 
