@@ -29,12 +29,12 @@ inline f32 zinc_vec4i_len(const Vec4i *vec)
 	return sqrtf(zinc_vec4i_squared_len(vec));
 }
 
-inline void zinc_vec4i_scale(Vec4i *vec, i32 c)
+inline void zinc_vec4i_scale(const Vec4i *vec, i32 c, Vec4i *dest)
 {
-	vec->x /= c;
-	vec->y /= c;
-	vec->z /= c;
-	vec->w /= c;
+	dest->x = vec->x * c;
+	dest->y = vec->y * c;
+	dest->z = vec->z * c;
+	dest->w = vec->w * c;
 }
 
 inline void zinc_vec4i_add(const Vec4i *a, const Vec4i *b, Vec4i *dest)

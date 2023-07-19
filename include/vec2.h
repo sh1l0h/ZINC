@@ -57,15 +57,16 @@ f32 zinc_vec2_len(const Vec2 *vec);
  *
  * @param[in, out] vec Pointer to the Vec2 variable to be normalized.
  */
-void zinc_vec2_norm(Vec2 *vec);
+void zinc_vec2_normalize(Vec2 *vec);
 
 /**
- * @brief Scales a Vec2 variable by a constant factor.
+ * @brief Scales a Vec2 variable by a constant factor and stores the result in a destination Vec2 variable.
  *
- * @param[in, out] vec Pointer to the Vec2 variable to be scaled.
- * @param[in, out] c The scaling factor.
+ * @param[in] vec Pointer to the Vec2 variable to be scaled.
+ * @param[in] c The scaling factor.
+ * @param[out] dest Pointer to the destination Vec2 variable.
  */
-void zinc_vec2_scale(Vec2 *vec, f32 c);
+void zinc_vec2_scale(const Vec2 *vec, f32 c, Vec2 *dest);
 
 /**
  * @brief Adds two Vec2 variables and stores the result in a destination Vec2 variable.

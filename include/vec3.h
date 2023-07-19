@@ -58,15 +58,16 @@ f32 zinc_vec3_len(const Vec3 *vec);
  *
  * @param[in, out] vec Pointer to the Vec3 variable to be normalized.
  */
-void zinc_vec3_norm(Vec3 *vec);
+void zinc_vec3_normalize(Vec3 *vec);
 
 /**
- * @brief Scales a Vec3 variable by a constant factor.
+ * @brief Scales a Vec3 variable by a constant factor and stores the result in a destination Vec3 variable.
  *
- * @param[in, out] vec Pointer to the Vec3 variable to be scaled.
+ * @param[in] vec Pointer to the Vec3 variable to be scaled.
  * @param[in] c The scaling factor.
+ * @param[out] dest Pointer to the destination Vec3 variable.
  */
-void zinc_vec3_scale(Vec3 *vec, f32 c);
+void zinc_vec3_scale(const Vec3 *vec, f32 c, Vec3 *dest);
 
 /**
  * @brief Adds two Vec3 variables and stores the result in a destination Vec3 variable.

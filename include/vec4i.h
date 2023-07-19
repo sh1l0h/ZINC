@@ -55,12 +55,13 @@ i32 zinc_vec4i_squared_len(const Vec4i *vec);
 f32 zinc_vec4i_len(const Vec4i *vec);
 
 /**
- * @brief Scales a Vec4i variable by a constant factor.
+ * @brief Scales a Vec4i variable by a constant factor and stores the result in a destination Vec4i variable.
  *
- * @param[in, out] vec Pointer to the Vec4i variable to be scaled.
+ * @param[in] vec Pointer to the Vec4i variable to be scaled.
  * @param[in] c The scaling factor.
+ * @param[out] dest Pointer to the destination Vec4i variable.
  */
-void zinc_vec4i_scale(Vec4i *vec, i32 c);
+void zinc_vec4i_scale(const Vec4i *vec, i32 c, Vec4i *dest);
 
 /**
  * @brief Adds two Vec4i variables and stores the result in a destination Vec4i variable.

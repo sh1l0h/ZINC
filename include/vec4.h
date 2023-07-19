@@ -59,15 +59,16 @@ f32 zinc_vec4_len(const Vec4 *vec);
  *
  * @param[in, out] vec Pointer to the Vec4 variable to be normalized.
  */
-void zinc_vec4_norm(Vec4 *vec);
+void zinc_vec4_normalize(Vec4 *vec);
 
 /**
- * @brief Scales a Vec4 variable by a constant factor.
+ * @brief Scales a Vec4 variable by a constant factor and stores the result in a destination Vec4 variable.
  *
- * @param[in, out] vec Pointer to the Vec4 variable to be scaled.
+ * @param[in] vec Pointer to the Vec4 variable to be scaled.
  * @param[in] c The scaling factor.
+ * @param[out] dest Pointer to the destination Vec4 variable.
  */
-void zinc_vec4_scale(Vec4 *vec, f32 c);
+void zinc_vec4_scale(const Vec4 *vec, f32 c, Vec4 *dest);
 
 /**
  * @brief Adds two Vec4 variables and stores the result in a destination Vec4 variable.

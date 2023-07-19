@@ -29,17 +29,17 @@ inline f32 zinc_vec3_len(const Vec3 *vec)
 	return sqrtf(zinc_vec3_squared_len(vec));
 }
 
-inline void zinc_vec3_norm(Vec3 *vec)
+inline void zinc_vec3_normalize(Vec3 *vec)
 {
 	f32 len = zinc_vec3_len(vec);
-	zinc_vec3_scale(vec, 1.0f/len);
+	zinc_vec3_scale(vec, 1.0f/len, vec);
 }
 
-inline void zinc_vec3_scale(Vec3 *vec, f32 c)
+inline void zinc_vec3_scale(const Vec3 *vec, f32 c, Vec3 *dest)
 {
-	vec->x /= c;
-	vec->y /= c;
-	vec->z /= c;
+	dest->x = vec->x * c;
+	dest->y = vec->y * c;
+    dest->z = vec->z * c;
 }
 
 inline void zinc_vec3_add(const Vec3 *a, const Vec3 *b, Vec3 *dest)
