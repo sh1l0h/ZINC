@@ -64,6 +64,15 @@ f32 zinc_vec4i_len(const Vec4i *vec);
 void zinc_vec4i_scale(const Vec4i *vec, i32 c, Vec4i *dest);
 
 /**
+ * @brief Divides a Vec4i variable by a constant and stores the result in a destination Vec4i variable.
+ *
+ * @param[in] vec Pointer to the Vec4i variable to be divided.
+ * @param[in] c The constant. 
+ * @param[out] dest Pointer to the destination Vec4i variable.
+ */
+void zinc_vec4i_div(const Vec4i *vec, i32 c, Vec4i *dest);
+
+/**
  * @brief Adds two Vec4i variables and stores the result in a destination Vec4i variable.
  *
  * @param[in] a Pointer to the first Vec4i variable.

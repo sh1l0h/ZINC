@@ -37,6 +37,14 @@ inline void zinc_vec4i_scale(const Vec4i *vec, i32 c, Vec4i *dest)
 	dest->w = vec->w * c;
 }
 
+inline void zinc_vec4i_div(const Vec4i *vec, i32 c, Vec4i *dest)
+{
+	dest->x = vec->x / c;
+	dest->y = vec->y / c;
+	dest->z = vec->z / c;
+	dest->w = vec->w / c;
+}
+
 inline void zinc_vec4i_add(const Vec4i *a, const Vec4i *b, Vec4i *dest)
 {
 	dest->x = a->x + b->x;
