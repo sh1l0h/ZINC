@@ -16,6 +16,6 @@ add_library(${PROJECT_NAME}
     src/io.c
     )
 
-target_compile_options(${PROJECT_NAME} PRIVATE -lm -Wall -Wextra -Werror)
+target_compile_options(${PROJECT_NAME} PRIVATE -lm -Wall -Wextra -Werror -O3)
 
 target_include_directories(ZINC PUBLIC include)
