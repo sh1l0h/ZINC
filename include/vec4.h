@@ -13,7 +13,7 @@ typedef union Vec4 {
 		f32 z;
 		f32 w;
 	};
-	f32 arr[2];
+	f32 arr[3];
 } Vec4;
 
 /**
