@@ -1,5 +1,5 @@
 # ZINC
-**ZINC** (ZINC is not [cglm](https://github.com/recp/cglm)) is a lightweight and efficient linear algebra library designed to provide essential mathematical operations for computer graphics applications.
+**ZINC** (**Z**INC **i**s **n**ot [**c**glm](https://github.com/recp/cglm)) is a lightweight and efficient linear algebra library designed to provide essential mathematical operations for computer graphics applications.
 
 ## Features
 - **Vector Operations**
