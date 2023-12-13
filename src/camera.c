@@ -43,7 +43,7 @@ void zinc_perspective_projection(Mat4 mat, f32 far, f32 near, f32 fov, f32 aspec
 	f32 t = tanf(fov/2.0f);
 
 	zinc_mat4_zero(mat);
-	mat[0][0] = 1.0f/aspect_ratio*t;
+	mat[0][0] = 1.0f/(aspect_ratio*t);
 	mat[1][1] = 1.0f/t;
 	mat[2][2] = (far + near)/(far - near); 
 	mat[2][3] = -2.0f*far*near/(far - near); 
