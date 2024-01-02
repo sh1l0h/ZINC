@@ -32,6 +32,8 @@ inline f32 zinc_vec2_len(const Vec2 *vec)
 inline void zinc_vec2_normalize(Vec2 *vec)
 {
 	f32 len = zinc_vec2_len(vec);
+    if(len == 0.0f) return;
+
 	zinc_vec2_scale(vec, 1.0f/len, vec);
 }
 
