@@ -3,8 +3,14 @@
 
 #include "types.h"
 
-#define ZINC_VEC4I_ZERO {{0, 0, 0, 0}}
-#define ZINC_VEC4I_ONE {{1, 1, 1, 1}}
+#define ZINC_VEC4I_ZERO_INIT {{0, 0, 0, 0}}
+#define ZINC_VEC4I_ONE_INIT  {{1, 1, 1, 1}}
+#define ZINC_VEC4I_ZERO ((Vec4i) ZINC_VEC4I_ZERO_INIT)
+#define ZINC_VEC4I_ONE  ((Vec4i) ZINC_VEC4I_ONE_INIT)
+
+#define ZINC_VEC4I_INIT(_x, _y, _z, _w) {{(_x), (_y), (_z), (_w)}}
+#define ZINC_VEC4I(_x, _y, _z, _w) \
+    ((Vec4i) ZINC_VEC4I_INIT((_x), (_y), (_z), (_w)))
 
 typedef union Vec4i {
 	struct {
