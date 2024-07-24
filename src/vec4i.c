@@ -1,4 +1,4 @@
-#include "../include/vec4i.h"
+#include "vec4i.h"
 #include <string.h>
 #include <math.h>
 

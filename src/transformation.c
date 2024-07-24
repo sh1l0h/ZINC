@@ -1,4 +1,4 @@
-#include "../include/transformation.h"
+#include "transformation.h"
 #include <math.h>
 
 void zinc_translate(Mat4 mat, const Vec3 *vec)

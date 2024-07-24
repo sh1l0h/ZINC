@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "../include/io.h"
+#include "io.h"
 
 void zinc_vec2_print(const Vec2 *vec)
 {

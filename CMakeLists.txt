@@ -32,4 +32,4 @@ add_library(${PROJECT_NAME}
 target_compile_options(${PROJECT_NAME} PRIVATE -Wall -Wextra -Werror -O3)
 
 target_include_directories(ZINC PUBLIC include)
-target_link_libraries(${PROJECT_NAME} PRIVATE m)
+target_link_libraries(${PROJECT_NAME} PUBLIC m)

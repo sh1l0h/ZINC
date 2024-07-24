@@ -1,4 +1,4 @@
-#include "../include/camera.h"
+#include "camera.h"
 #include <math.h>
 
 void zinc_view_matrix(Mat4 mat, const Vec3 *pos, const Vec3 *right, const Vec3 *up, const Vec3 *forward)

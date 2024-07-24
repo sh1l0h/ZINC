@@ -1,4 +1,4 @@
-#include "../include/mat4.h"
+#include "mat4.h"
 
 inline void zinc_mat4_zero(Mat4 mat)
 {
