@@ -16,7 +16,7 @@ inline void zinc_vec4_one(Vec4 *vec)
 
 inline void zinc_vec4_copy(const Vec4 *src, Vec4 *dest)
 {
-	memcpy(dest, src, 4*sizeof(f32));
+	memcpy(dest, src, sizeof(*dest));
 }
 
 inline f32 zinc_vec4_squared_len(const Vec4 *vec)

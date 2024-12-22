@@ -16,7 +16,7 @@ inline void zinc_vec2i_one(Vec2i *vec)
 
 inline void zinc_vec2i_copy(const Vec2i *src, Vec2i *dest)
 {
-	memcpy(dest, src, 2*sizeof(i32));
+	memcpy(dest, src, sizeof(*dest));
 }
 
 inline i32 zinc_vec2i_squared_len(const Vec2i *vec)
