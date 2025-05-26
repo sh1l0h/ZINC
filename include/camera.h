@@ -1,8 +1,8 @@
 #ifndef ZINC_CAMERA_H
 #define ZINC_CAMERA_H
 
-#include "./mat4.h"
-#include "./vec3.h"
+#include "mat4.h"
+#include "vec3.h"
 
 /**
  * @brief Calculates the view matrix for a camera.

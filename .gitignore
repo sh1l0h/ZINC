@@ -3,8 +3,7 @@
 [#]*[#]
 .\#*
 
-#Directory with tests
-tests/
-
 #Build directory
 build/
+
+.ccls-cache/

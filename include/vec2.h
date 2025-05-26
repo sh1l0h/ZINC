@@ -1,103 +1,106 @@
 #ifndef ZINC_VEC2_H
 #define ZINC_VEC2_H
 
-#include "types.h"
-
-#define ZINC_VEC2_ZERO_INIT {{0.0f, 0.0f}}
-#define ZINC_VEC2_ONE_INIT  {{1.0f, 1.0f}}
-#define ZINC_VEC2_ZERO ((Vec2) ZINC_VEC2_ZERO_INIT)
-#define ZINC_VEC2_ONE  ((Vec2) ZINC_VEC2_ONE_INIT)
-
-#define ZINC_VEC2_INIT(_x, _y) {{(_x), (_y)}}
-#define ZINC_VEC2(_x, _y) ((Vec2) ZINC_VEC2_INIT((_x), (_y)))
+#include "utils.h"
 
 typedef union Vec2 {
-	struct {
-		f32 x;
-		f32 y;
-	};
-	f32 arr[2];
+    f32 arr[2];
+#if __STDC_VERSION__ >= 201112L
+    struct {
+        f32 x;
+        f32 y;
+    };
+#endif
 } Vec2;
 
-/**
- * @brief Initializes a Vec2 variable with zero values.
- *
- * @param[in, out] vec Pointer to the Vec2 variable to be initialized.
- */
-void zinc_vec2_zero(Vec2 *vec);
+static ZINC_FORCE_INLINE Vec2 ZINC_PREF(vec2)(f32 x, f32 y)
+{
+    return (Vec2) {{x, y}};
+}
 
-/**
- * @brief Initializes a Vec2 variable with values (1.0, 1.0).
- *
- * @param[in, out] vec Pointer to the Vec2 variable to be initialized.
- */
-void zinc_vec2_one(Vec2 *vec);
+static ZINC_FORCE_INLINE Vec2 ZINC_PREF(vec2_zero)()
+{
+    return ZINC_PREF(vec2)(0.0f, 0.0f);
+}
 
-/**
- * @brief Copies the values from one Vec2 variable to another.
- *
- * @param[in] src Pointer to the source Vec2 variable.
- * @param[out] dest Pointer to the destination Vec2 variable.
- */
-void zinc_vec2_copy(const Vec2 *src, Vec2 *dest);
+static ZINC_FORCE_INLINE Vec2 ZINC_PREF(vec2_one)()
+{
+    return ZINC_PREF(vec2)(1.0f, 1.0f);
+}
 
-/**
- * @brief Calculates the squared length of a Vec2 variable.
- *
- * @param[in] vec Pointer to the Vec2 variable.
- * @return The squared length of the Vec2.
- */
-f32 zinc_vec2_squared_len(const Vec2 *vec);
+static ZINC_FORCE_INLINE Vec2 ZINC_PREF(vec2_scale)(Vec2 vec, f32 s)
+{
+    return ZINC_PREF(vec2)(vec.arr[0] * s, vec.arr[1] * s);
+}
 
-/**
- * @brief Calculates the length of a Vec2 variable.
- *
- * @param[in] vec Pointer to the Vec2 variable.
- * @return The length of the Vec2.
- */
-f32 zinc_vec2_len(const Vec2 *vec);
+static ZINC_FORCE_INLINE Vec2 ZINC_PREF(vec2_scale_eq)(Vec2 *vec,
+                                                       f32 s)
+{
+    vec->arr[0] *= s;
+    vec->arr[1] *= s;
 
-/**
- * @brief Normalizes a Vec2 variable, making its length 1.
- *
- * @param[in, out] vec Pointer to the Vec2 variable to be normalized.
- */
-void zinc_vec2_normalize(Vec2 *vec);
+    return *vec;
+}
 
-/**
- * @brief Scales a Vec2 variable by a constant factor and stores the result in a destination Vec2 variable.
- *
- * @param[in] vec Pointer to the Vec2 variable to be scaled.
- * @param[in] c The scaling factor.
- * @param[out] dest Pointer to the destination Vec2 variable.
- */
-void zinc_vec2_scale(const Vec2 *vec, f32 c, Vec2 *dest);
+static ZINC_FORCE_INLINE Vec2 ZINC_PREF(vec2_add)(Vec2 a, Vec2 b)
+{
+    return ZINC_PREF(vec2)(a.arr[0] + b.arr[0], a.arr[1] + b.arr[1]);
+}
 
-/**
- * @brief Adds two Vec2 variables and stores the result in a destination Vec2 variable.
- *
- * @param[in] a Pointer to the first Vec2 variable.
- * @param[in] b Pointer to the second Vec2 variable.
- * @param[out] dest Pointer to the destination Vec2 variable.
- */
-void zinc_vec2_add(const Vec2 *a, const Vec2 *b, Vec2 *dest);
+static ZINC_FORCE_INLINE Vec2 ZINC_PREF(vec2_add_eq)(Vec2 *vec, Vec2 b)
+{
+    vec->arr[0] += b.arr[0];
+    vec->arr[1] += b.arr[1];
 
-/**
- * @brief Subtracts one Vec2 variable from another and stores the result in a destination Vec2 variable.
- *
- * @param[in] a Pointer to the Vec2 variable to be subtracted from.
- * @param[in] b Pointer to the Vec2 variable to subtract.
- * @param[out] dest Pointer to the destination Vec2 variable.
- */
-void zinc_vec2_sub(const Vec2 *a, const Vec2 *b, Vec2 *dest);
+    return *vec;
+}
 
-/**
- * @brief Calculates the dot product of two Vec2 variables.
- *
- * @param[in] a Pointer to the first Vec2 variable.
- * @param[in] b Pointer to the second Vec2 variable.
- * @return The dot product of the two Vec2 variables.
- */
-f32 zinc_vec2_dot(const Vec2 *a, const Vec2 *b);
+static ZINC_FORCE_INLINE Vec2 ZINC_PREF(vec2_sub)(Vec2 a, Vec2 b)
+{
+    return ZINC_PREF(vec2)(a.arr[0] - b.arr[0], a.arr[1] - b.arr[1]);
+}
+
+static ZINC_FORCE_INLINE Vec2 ZINC_PREF(vec2_sub_eq)(Vec2 *vec, Vec2 b)
+{
+    vec->arr[0] -= b.arr[0];
+    vec->arr[1] -= b.arr[1];
+
+    return *vec;
+}
+
+static ZINC_FORCE_INLINE f32 ZINC_PREF(vec2_dot)(Vec2 a, Vec2 b)
+{
+    return a.arr[0] * b.arr[0] + a.arr[1] * b.arr[1];
+}
+
+static ZINC_FORCE_INLINE f32 ZINC_PREF(vec2_squared_norm2)(Vec2 vec)
+{
+    return ZINC_PREF(vec2_dot)(vec, vec);
+}
+
+static ZINC_FORCE_INLINE f32 ZINC_PREF(vec2_norm2)(Vec2 vec)
+{
+    return sqrtf(ZINC_PREF(vec2_squared_norm2)(vec));
+}
+
+static ZINC_FORCE_INLINE Vec2 ZINC_PREF(vec2_normalize)(Vec2 vec)
+{
+    f32 len = ZINC_PREF(vec2_norm2)(vec);
+
+    if (ZINC_UNLIKELY(ZINC_PREF(f32_eq)(len, 0.0f)))
+        return vec;
+
+    return ZINC_PREF(vec2_scale)(vec, 1.0f / len);
+}
+
+static ZINC_FORCE_INLINE Vec2 ZINC_PREF(vec2_normalize_eq)(Vec2 *vec)
+{
+    f32 len = ZINC_PREF(vec2_norm2)(*vec);
+
+    if (ZINC_UNLIKELY(ZINC_PREF(f32_eq)(len, 0.0f)))
+        return *vec;
+
+    return ZINC_PREF(vec2_scale_eq)(vec, 1.0f / len);
+}
 
 #endif

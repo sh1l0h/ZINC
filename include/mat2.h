@@ -1,8 +1,8 @@
 #ifndef ZINC_MAT2_H
 #define ZINC_MAT2_H
 
-#include "types.h"
-#include "./vec2.h"
+#include "utils.h"
+#include "vec2.h"
 
 #define ZINC_MAT2_ZERO {{0.0f, 0.0f}, {0.0f, 0.0f}}
 

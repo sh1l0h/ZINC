@@ -1,0 +1,3 @@
+[submodule "tests/CUT"]
+	path = tests/CUT
+	url = https://github.com/sh1l0h/CUT.git
